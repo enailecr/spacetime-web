@@ -3,7 +3,6 @@ import Image from 'next/image'
 
 export function Profile() {
   const { name, avatarUrl } = getUser()
-  console.log(name, avatarUrl)
   return (
     <div className="flex items-center gap-3 text-left">
       <Image

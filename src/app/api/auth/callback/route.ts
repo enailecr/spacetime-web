@@ -7,11 +7,9 @@ export async function GET(request: NextRequest) {
   const code = searchParams.get('code')
 
   const redirectTo = request.cookies.get('redirectTo')?.value
-console.log('REDIRECTTO ', redirectTo)
   const registerResponse = await api.post('/register', { code })
 
   const { token } = registerResponse.data
-  console.log('token ', token)
   const redirectURL = redirectTo ?? new URL('/', request.url)
   const cookieExpiresInSeconds = 60 * 60 * 24 * 30
   return NextResponse.redirect(redirectURL, {

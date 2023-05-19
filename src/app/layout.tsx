@@ -25,7 +25,6 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   const isAuthenticated = cookies().has('token')
-  console.log('SOCORRO PQ NAO FUNCIONA CARAIO' + isAuthenticated)
 
   return (
     <html lang="pt-br">
@@ -53,7 +52,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </div>
           <div
             id="right"
-            className="flex flex-col bg-[url(../assets/bg-stars.svg)] bg-cover p-16"
+            className="flex max-h-screen flex-col overflow-y-scroll bg-[url(../assets/bg-stars.svg)] bg-cover "
           >
             {children}
           </div>
